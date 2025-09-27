@@ -1,9 +1,15 @@
 package rpc
 
-import "os"
+import (
+	"os"
+
+	"block-parser-go/internal/config"
+)
+
+const alchemyApiKeyEnvName = "ALCHEMY_API_KEY"
 
 func GetAlchemyRpcUrl(chainId int) string {
-	return "https://" + GetAlchemyChainCode(chainId) + ".g.alchemy.com/v2/" + os.Getenv("ALCHEMY_API_KEY")
+	return "https://" + GetAlchemyChainCode(chainId) + ".g.alchemy.com/v2/" + os.Getenv(alchemyApiKeyEnvName)
 }
 
 func GetAlchemyChainCode(chainId int) string {
@@ -15,4 +21,8 @@ func GetAlchemyChainCode(chainId int) string {
 	default:
 		panic("Unsupported chain ID")
 	}
+}
+
+func GetAlchemyApiKey() string {
+	return config.GetEnvValueSafely(alchemyApiKeyEnvName, alchemyApiKeyEnvName+" is not set")
 }
