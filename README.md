@@ -31,16 +31,18 @@ Start: 27.09.2025
 ## Go Learning Checkpoints
 
 Basic Go
--[] Familiar with reading/writing from/to files
--[] Able to handle WebSocket connections
--[] Make HTTP requests and handle errors
--[] Prometheus metrics integration
--[] Proper logging, parsable and analyzable in Loki/Grafana
--[] Unit & Integration testing
+
+-   Familiar with reading/writing from/to files
+-   Able to handle WebSocket connections
+-   Make HTTP requests and handle errors
+-   Prometheus metrics integration
+-   Proper logging, parsable and analyzable in Loki/Grafana
+-   Unit & Integration testing
 
 go-ethereum
--[] Making subscriptions for new txs/blocks/headers
--[] Calling arbitrary RPC methods
--[] Calling typed contract functions via use of ABIs
--[] Building and sending transactions (not actually part of the project, but part of basic skill set)
--[] Retrieving data via Multicall3
+
+-   Making subscriptions for new txs/blocks/headers
+-   Calling arbitrary RPC methods
+-   Calling typed contract functions via use of ABIs
+-   Building and sending transactions (not actually part of the project, but part of basic skill set)
+-   Retrieving data via Multicall3
