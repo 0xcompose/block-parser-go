@@ -1,6 +1,7 @@
-package rpc
+package client
 
 import (
+	"fmt"
 	"os"
 
 	"block-parser-go/internal/config"
@@ -9,7 +10,7 @@ import (
 const alchemyApiKeyEnvName = "ALCHEMY_API_KEY"
 
 func GetAlchemyRpcUrl(chainId ChainID) string {
-	return "https://" + GetAlchemyChainCode(chainId) + ".g.alchemy.com/v2/" + os.Getenv(alchemyApiKeyEnvName)
+	return fmt.Sprintf("https://%s.g.alchemy.com/v2/%s", GetAlchemyChainCode(chainId), os.Getenv(alchemyApiKeyEnvName))
 }
 
 func GetAlchemyChainCode(chainId ChainID) string {
