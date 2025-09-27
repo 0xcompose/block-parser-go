@@ -47,9 +47,17 @@ go-ethereum
 -   Building and sending transactions (not actually part of the project, but part of basic skill set)
 -   Retrieving data via Multicall3
 
-## Project Architecture
+Back-End
 
-Architecture advised by Claude
+-   Swagger
+-   REST API and (or) GraphQL API
+-   OpenAPI specification generation
+-   PostgresQL
+-   Middleware (auth/logging/metrics)
+
+## Project Architecture (by Claude)
+
+Architecture advised
 
 ```
 block-parser/
@@ -129,3 +137,60 @@ block-parser/
 ├── go.sum
 └── Makefile                        # Build and development commands
 ```
+
+## Code Size Projections (by Claude)
+
+Based on your indexer project specification and the architecture we outlined, here's my estimation:
+
+### Core Application (~2,500-3,500 lines)
+
+-   **Config & Environment**: ~200-300 lines
+-   **RPC Client Layer**: ~400-600 lines
+-   **Indexer Core Logic**: ~800-1,200 lines
+-   **Database Layer**: ~600-900 lines
+-   **API Handlers**: ~300-500 lines
+-   **Models/Structs**: ~200-300 lines
+
+### Supporting Code (~1,500-2,000 lines)
+
+-   **Error Handling**: ~150-200 lines
+-   **Logging & Metrics**: ~300-400 lines
+-   **Utilities & Helpers**: ~200-300 lines
+-   **Middleware**: ~200-300 lines
+-   **Database Migrations**: ~100-200 lines
+-   **Main Applications** (`cmd/`): ~100-150 lines
+
+### Testing (~1,500-2,500 lines)
+
+-   **Unit Tests**: ~1,000-1,500 lines
+-   **Integration Tests**: ~500-1,000 lines
+
+### Configuration & Scripts (~500-700 lines)
+
+-   **Docker/K8s configs**: ~200-300 lines
+-   **SQL queries**: ~150-250 lines
+-   **Scripts & Makefiles**: ~150-200 lines
+
+## **Total Estimation: 6,000-8,700 lines**
+
+### Conservative estimate: **~7,000 lines**
+
+## Factors that could increase size:
+
+-   Complex transaction parsing logic
+-   Sophisticated re-org handling
+-   Multiple contract ABIs
+-   Advanced error recovery
+-   Comprehensive monitoring
+-   GraphQL API (vs simple REST)
+
+## Factors that could decrease size:
+
+-   Using ORM instead of raw SQL
+-   Leveraging more third-party libraries
+-   Simpler data models
+-   Basic error handling
+
+For a **production-grade indexer** with proper testing, monitoring, and error handling, 7,000 lines is realistic. This excludes generated code (protobuf, OpenAPI, etc.) and vendor dependencies.
+
+Your 2-month timeline with 10-15 hours/week (80-120 total hours) seems achievable for this scope.
