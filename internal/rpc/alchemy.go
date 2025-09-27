@@ -1,4 +1,4 @@
-package alchemy
+package rpc
 
 import "os"
 

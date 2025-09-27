@@ -1,4 +1,4 @@
-package infura
+package rpc
 
 import "os"
 
