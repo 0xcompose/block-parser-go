@@ -1,4 +1,4 @@
-module github.com/0xcompose/block-parser-go
+module block-parser-go
 
 go 1.25.1
 
