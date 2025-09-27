@@ -36,6 +36,7 @@ Basic Go
 -[] Make HTTP requests and handle errors
 -[] Prometheus metrics integration
 -[] Proper logging, parsable and analyzable in Loki/Grafana
+-[] Unit & Integration testing
 
 go-ethereum
 -[] Making subscriptions for new txs/blocks/headers
